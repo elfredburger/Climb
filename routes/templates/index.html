@@ -10,16 +10,16 @@
     <h2>Список Трасс</h2>
     <table border=1 frame=void >
         <tr><th>Id</th><th>Название</th><th>Сложность</th><th>Пробил</th><th>Локация</th><th>Сектор</th><th>Кол-во оттяжек</th><th>Доп информация</th><th>Ссылка на локацию</th></tr>
-        {% for person in data %}
-        <tr><td>{{ person.id }}</td>
-            <td>{{ person.name }}</td>
-            <td>{{ person.grade }}</td>
-            <td>{{ person.bolter.all|join:", " }}</td>
-            <td>{{ person.location }}</td>
-             <td>{{ person.sector }}</td>
-            <td>{{ person.quickdraws }}</td>
-            <td>{{ person.extra_info }}</td>
-            <td>{{ person.coords }}</td>
+        {% for route in data %}
+        <tr><td>{{ route.id }}</td>
+            <td>{{ route.name }}</td>
+            <td>{{ route.grade }}</td>
+            <td>{{ route.bolter.all|join:", " }}</td>
+            <td>{{ route.location }}</td>
+             <td>{{ route.sector }}</td>
+            <td>{{ route.quickdraws }}</td>
+            <td>{{ route.extra_info }}</td>
+            <td>{{ route.coords }}</td>
 
         </tr>
         {% endfor %}

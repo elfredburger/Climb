@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Users</title>
+</head>
+<body class="container">
+
+
+    <h2>Список пользователей</h2>
+    <table border=1 frame=void >
+        <tr><th>Date registered</th><th>Name</th><th>Second name</th><th>Username</th><th>Age</th><th>Routes Climbed</th></tr>
+        {% for person in data %}
+        <tr><td>{{ person.date_registered}}</td>
+            <td>{{ person.name }}</td>
+            <td>{{ person.second_name }}</td>
+            <td>{{ person.username }}</td>
+            <td>{{ person.age }}</td>
+            <td>{{ person.routes_climbed.all|join:", " }}</td>
+
+
+
+
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
