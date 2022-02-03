@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="utf-8" />
+    <title>Боулдеры</title>
 </head>
-<body>
-$END$
+<body class="container">
+
+
+   <h2>Список Маршрутов</h2>
+    <table border=1 frame=void >
+        <tr><th>Id</th><th>Название</th><th>Нашел</th><th>Сложность</th><th>Комфорт</th><th>Высота</th><th>Доп информация</th><th>Фото</th><th>Сектор</th><th>Кол-во Крашпадов</th><th>Ссылка на локацию</th></tr>
+        {% for boulder in data %}
+        <tr><td>{{ boulder.id }}</td>
+            <td>{{ boulder.name }}</td>
+             <td>{{ boulder.bolter.all|join:", " }}</td>
+             <td>{{ boulder.grade }}</td>
+
+             <td>{{boulder.comfort}}</td>
+            <td>{{boulder.height}}</td>
+            <td>{{boulder.extra_info}}</td>
+            {% load static %}
+            <td><img src="../routes/{{boulder.photo}}"></td>
+            <td>{{ boulder.sector }}</td>
+            <td>{{ boulder.amount_of_crashpads }}</td>
+            <td><a href="{{boulder.coords}}">Маршрут на карте</a></td>
+            <td><a href="edit_boulder/{{boulder.id}}">Изменить</a> </td>
+            <td><a href="delete_boulder/{{boulder.id}}">Удалить</a> </td>
+
+        </tr>
+        {% endfor %}
+    </table>
+
 </body>
 </html>

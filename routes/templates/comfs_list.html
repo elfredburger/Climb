@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="utf-8" />
+    <title>Уровни комфорта</title>
 </head>
-<body>
-$END$
+<body class="container">
+
+
+    <h2>Список уровней комфорта</h2>
+    <table border=1 frame=void >
+        <tr><th>Уровень комфорта</th></tr>
+        {% for comf in data %}
+        <tr><td>{{ comf.comfort}}</td>
+        <td><a href="edit_comf/{{comf.id}}">Изменить</a> </td>
+            <td><a href="delete_comf/{{comf.id}}">Удалить</a></td>
+
+        </tr>
+        {% endfor %}
+    </table>
+
 </body>
 </html>

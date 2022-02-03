@@ -2,28 +2,31 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Routes</title>
+    <title>Index</title>
 </head>
-<body class="container">
+<body>
+<table border=1 frame=void >
+<tr >
+    <td><a href=" {% url 'add_bolter_view' %}">Добавить пробившего маршрут</a></td>
+    <td><a href=" {% url 'add_location_view' %}">Добавить локацию</a></td>
+    <td><a href=" {% url 'add_route_view' %}">Добавить маршрут</a></td>
+    <td><a href=" {% url 'add_sector_view' %}">Добавить сектор</a></td>
+    <td><a href=" {% url 'register_user' %}">Добавить пользоавателя</a></td>
+    <td><a href=" {% url 'add_comf_view' %}">Добавить категорию сложности</a></td>
+    <td><a href=" {% url 'add_grade_view' %}">Добавить уровень комфорта</a></td>
+    <td><a href=" {% url 'add_boulder' %}">Добавить болдер</a></td>
 
-
-    <h2>Список Трасс</h2>
-    <table border=1 frame=void >
-        <tr><th>Id</th><th>Название</th><th>Сложность</th><th>Пробил</th><th>Локация</th><th>Сектор</th><th>Кол-во оттяжек</th><th>Доп информация</th><th>Ссылка на локацию</th></tr>
-        {% for route in data %}
-        <tr><td>{{ route.id }}</td>
-            <td>{{ route.name }}</td>
-            <td>{{ route.grade }}</td>
-            <td>{{ route.bolter.all|join:", " }}</td>
-            <td>{{ route.location }}</td>
-             <td>{{ route.sector }}</td>
-            <td>{{ route.quickdraws }}</td>
-            <td>{{ route.extra_info }}</td>
-            <td>{{ route.coords }}</td>
-
-        </tr>
-        {% endfor %}
-    </table>
-
+</tr>
+<tr>
+    <td><a href="{%url 'bolters_list_view' %}">Список людей пробивающих маршруты</a></td>
+    <td><a href="{%url 'locations_list_view' %}">Список локаций</a></td>
+    <td><a href="{%url 'routes_list_view' %}">Список маршрутов </a></td>
+    <td><a href="{%url 'sectors_list_view' %}">Список секторов</a></td>
+    <td><a href="{%url 'logout_user'%}">Выйти</a> </td>
+    <td><a href="{%url 'comfs_list_view' %}">Список уровней комфорта</a></td>
+    <td><a href="{%url 'grades_list_view' %}">Список категорий сложности</a></td>
+    <td><a href=" {% url 'boulders_list_view' %}">Список болдеров</a> </td>
+</tr>
+</table>
 </body>
 </html>

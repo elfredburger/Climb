@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="utf-8" />
+    <title>Маршруты</title>
 </head>
-<body>
-$END$
+<body class="container">
+
+
+    <h2>Список Маршрутов</h2>
+    <table border=1 frame=void >
+        <tr><th>Id</th><th>Название</th><th>Сложность</th><th>Пробил</th><th>Локация</th><th>Сектор</th><th>Кол-во оттяжек</th><th>Доп информация</th><th>Ссылка на локацию</th></tr>
+        {% for route in data %}
+        <tr><td>{{ route.id }}</td>
+            <td>{{ route.name }}</td>
+            <td>{{ route.grade }}</td>
+            <td>{{ route.bolter.all|join:", " }}</td>
+            <td>{{ route.location }}</td>
+             <td>{{ route.sector }}</td>
+            <td>{{ route.quickdraws }}</td>
+            <td>{{ route.extra_info }}</td>
+            <td><a href=" {{ route.coords }}">Маршрут на карте</a></td>
+            <td><a href="edit_route/{{route.id}}">Изменить</a> </td>
+            <td><a href="delete_route/{{route.id}}">Удалить</a> </td>
+
+        </tr>
+        {% endfor %}
+    </table>
+
 </body>
 </html>

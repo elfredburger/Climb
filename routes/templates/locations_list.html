@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="utf-8" />
+    <title>Список локаций</title>
 </head>
-<body>
-$END$
+<body class="container">
+
+
+    <h2>Список локаций</h2>
+    <table border=1 frame=void >
+        <tr><th>Название</th><th>Доп информация</th></tr>
+        {% for location in data %}
+        <tr><td>{{ location.location }}</td>
+        <td>{{ location.additional_info }}</td>
+        <td><a href="edit_location/{{location.id}}">Изменить</a> </td>
+            <td><a href="delete_location/{{location.id}}">Удалить</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
 </body>
 </html>

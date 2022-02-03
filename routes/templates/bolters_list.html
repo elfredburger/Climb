@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="utf-8" />
+    <title>Создатели маршрутов</title>
 </head>
-<body>
-$END$
+<body class="container">
+
+
+    <h2>Список создателей маршрутов</h2>
+    <table border=1 frame=void >
+        <tr><th>Имя</th></tr>
+        {% for bolter in data %}
+        <tr><td>{{ bolter.name}}</td>
+        <td><a href="edit_bolter/{{bolter.id}}">Изменить</a> </td>
+        <td><a href="delete_bolter/{{bolter.id}}">Удалить</a> </td>
+        </tr>
+        {% endfor %}
+    </table>
+
 </body>
 </html>

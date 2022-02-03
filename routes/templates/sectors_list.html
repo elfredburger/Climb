@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="utf-8" />
+    <title>Список секторов</title>
 </head>
-<body>
-$END$
+<body class="container">
+
+
+    <h2>Список секторов</h2>
+    <table border=1 frame=void >
+        <tr><th>Локация</th><th>Сектор</th></tr>
+        {% for sector in data %}
+        <tr><td>{{ sector.location }}</td>
+        <td>{{ sector.sector }}</td>
+         <td><a href="edit_sector/{{sector.id}}">Изменить</a> </td>
+            <td><a href="delete_sector/{{sector.id}}">Удалить</a></td>
+
+        </tr>
+        {% endfor %}
+    </table>
+
 </body>
 </html>

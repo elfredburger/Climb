@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="utf-8" />
+    <title>Список маршрутов</title>
 </head>
-<body>
-$END$
+<body class="container">
+
+
+    <h2>Список маршрутов</h2>
+    <table border=1 frame=void >
+        <tr><th>Маршрут</th></tr>
+        {% for grade in data %}
+        <tr><td>{{ grade.grade }}</td>
+        <td><a href="edit_grade/{{grade.id}}">Изменить</a> </td>
+                    <td><a href="delete_grade/{{grade.id}}">Удалить</a> </td>
+
+
+
+        </tr>
+        {% endfor %}
+    </table>
+
 </body>
 </html>
